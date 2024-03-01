@@ -2,8 +2,9 @@
 <div class="hello">
     <br>
     <h1>Facebook Login</h1>
+    <input placeholder="input app id" v-model="inputId"/>
     <facebookLogin class="button"
-      appId="586080384825635"
+      appId={{inputId}}
       @login="getUserData"
       @logout="onLogout"
       :loginOptions="{
@@ -42,7 +43,8 @@ export default {
                 lat: 28.4595,
                 lng: 77.0266
             },
-            userDetails:{}
+            userDetails:{},
+            inputId:null,
         }
     },
     methods:{
